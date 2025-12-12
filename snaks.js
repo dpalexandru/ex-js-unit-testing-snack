@@ -6,10 +6,12 @@ function getInitials(str) {
   return `${inizialeNome}.${inizialeCognome}.`;
 }
 
-// snack2
+// snack2 e snack4
+
 function createSlug(str) {
   const strMinuscola = str.toLowerCase();
-  return strMinuscola;
+  const senzaSpazi = strMinuscola.replaceAll(' ', '-');
+  return senzaSpazi;
 }
 
 // snack3
