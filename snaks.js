@@ -12,7 +12,16 @@ function createSlug(str) {
   return strMinuscola;
 }
 
-
+// snack3
+function average(arr) {
+  arr.forEach(element => {
+    if (isNaN(element)) {
+      throw new Error("La media funziona solo su un array di numeri");
+    }
+  });
+  media = arr.reduce((acc, num) => acc + num, 0) / arr.length
+  return media;
+}
 
 
 
@@ -20,5 +29,6 @@ function createSlug(str) {
 
 module.exports = {
   getInitials,
-  createSlug
+  createSlug,
+  average
 }
