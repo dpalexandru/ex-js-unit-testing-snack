@@ -25,6 +25,14 @@ function average(arr) {
   return media;
 }
 
+// snack5
+function isPalindrome(str) {
+  const strContratio = str.split('').reverse().join('');
+  const result = str.toLowerCase() === strContratio.toLowerCase()
+  return result
+}
+
+
 
 
 
@@ -32,5 +40,6 @@ function average(arr) {
 module.exports = {
   getInitials,
   createSlug,
-  average
+  average,
+  isPalindrome
 }

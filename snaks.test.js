@@ -1,6 +1,7 @@
 const { getInitials,
   createSlug,
-  average
+  average,
+  isPalindrome
 } = require("./snaks.js")
 
 // snack1 
@@ -26,4 +27,12 @@ test('La funzione createSlug restituisce una stringa in lowercase. La funzione c
   expect(createSlug("prova test SLUG")).toBe("prova-test-slug");
 
 })
+
+
+// snack5 
+test('La funzione isPalindrome verifica se una stringa è un palindromo. ', () => {
+  expect(isPalindrome("dessanai")).toBeFalsy();
+  expect(isPalindrome("Anna")).toBeTruthy()
+})
+
 
