@@ -1,3 +1,4 @@
+
 // snack1
 function getInitials(str) {
   const [nome, cognome] = str.split(" ").filter(str => str !== '');
