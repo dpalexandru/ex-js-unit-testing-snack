@@ -1,7 +1,8 @@
 const { getInitials,
   createSlug,
   average,
-  isPalindrome
+  isPalindrome,
+  findPostById
 } = require("./snaks.js")
 
 // snack1 
@@ -36,5 +37,46 @@ test('La funzione isPalindrome verifica se una stringa è un palindromo. ', () =
   expect(isPalindrome("dessanai")).toBeFalsy();
   expect(isPalindrome("Anna")).toBeTruthy()
 })
+
+
+
+// snack7 
+const posts = [
+  {
+    id: 1,
+    title: "Introduzione a JavaScript",
+    slug: "introduzione-a-javascript"
+  },
+  {
+    id: 2,
+    title: "Come usare le funzioni in JavaScript",
+    slug: "come-usare-le-funzioni-in-javascript"
+  },
+  {
+    id: 3,
+    title: "Array e oggetti in JavaScript",
+    slug: "array-e-oggetti-in-javascript"
+  },
+  {
+    id: 4,
+    title: "Cos'è un palindromo",
+    slug: "cos-e-un-palindromo"
+  }
+];
+
+
+test('La funzione findPostById restituisce il post corretto dato l’array di post e l’id ', () => {
+  expect(findPostById(posts, 2)).toEqual({
+    id: 2,
+    title: "Come usare le funzioni in JavaScript",
+    slug: "come-usare-le-funzioni-in-javascript"
+  })
+  expect(() => findPostById(posts, "ciao")).toThrow();
+  expect(() => findPostById([1, 2, 3], 2)).toThrow();
+
+  expect(findPostById(posts, 6)).toBe(null);
+
+})
+
 
 
