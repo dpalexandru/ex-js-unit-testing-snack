@@ -6,9 +6,12 @@ function getInitials(str) {
   return `${inizialeNome}.${inizialeCognome}.`;
 }
 
-// snack2 e snack4
+// snack2, snack4 e snack 6
 
 function createSlug(str) {
+  if (!str) {
+    throw new Error("Stringa non valida ");
+  }
   const strMinuscola = str.toLowerCase();
   const senzaSpazi = strMinuscola.replaceAll(' ', '-');
   return senzaSpazi;

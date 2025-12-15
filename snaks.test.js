@@ -21,10 +21,12 @@ test('La funzione average calcola la media aritmetica di un array di numeri.', (
 
 })
 
-// snack2 e snack 4
-test('La funzione createSlug restituisce una stringa in lowercase. La funzione createSlug sostituisce gli spazi con -', () => {
+// snack2, snack 4 e snack5
+test('La funzione createSlug lancia un errore se il titolo è vuoto o non valido,La funzione createSlug restituisce una stringa in lowercase. La funzione createSlug sostituisce gli spazi con -', () => {
   expect(createSlug("ALex Dessanai")).toBe("alex-dessanai");
   expect(createSlug("prova test SLUG")).toBe("prova-test-slug");
+  expect(() => createSlug("")).toThrow();
+  expect(() => createSlug(null)).toThrow();
 
 })
 
